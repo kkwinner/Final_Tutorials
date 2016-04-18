@@ -1,0 +1,41 @@
+swagger: '2.0'
+info:
+  title: Data API Example
+  version: "0.1"
+consumes:
+  - application/json
+produces:
+  - application/json
+#security:
+#  # enable OAuth protection for all REST endpoints
+#  # (only active if the TOKENINFO_URL environment variable is set)
+#  - oauth2: [uid]
+paths:
+  /:
+    get:
+      operationId: api_server.root
+      summary: Get root server response
+      responses:
+        200:
+          description: Return server information
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Root'
+definitions:
+  Root:
+    type: object
+    required:
+      - server_name
+    properties:
+      server_name:
+        type: string
+        description: Server name identifier
+        example: "data-one"
+        readOnly: true
+      time:
+        type: string
+        format: date-time
+        description: Creation time
+        example: "2015-07-07T15:49:51.230+02:00"
+        readOnly: true
