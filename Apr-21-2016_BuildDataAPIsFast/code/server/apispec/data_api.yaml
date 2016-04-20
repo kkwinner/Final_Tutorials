@@ -22,18 +22,41 @@ paths:
             type: array
             items:
               $ref: '#/definitions/Root'
-#  /:
-#    get:
-#      operationId: api_server.root
-#      summary: Get root server response
-#      responses:
-#        200:
-#          description: Return server information
-#          schema:
-#            type: array
-#            items:
-#              $ref: '#/definitions/Root'
 
+  /summary/costs:
+    get:
+      operationId: api_server.get_summary_uris
+      summary: Get links for cost summary data
+      responses:
+        200:
+          description: Return summary links information
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/SummaryURI'
+
+  /summary/costs/{year}:
+    get:
+      operationId: api_server.get_summary
+      summary: Get cost data for year
+      parameters:
+        - $ref: '#/parameters/year'
+      responses:
+        200:
+          description: Return cost information
+          schema:
+            $ref: '#/definitions/Costs'
+## ALL PARAMETERS HERE
+parameters:
+  year:
+    name: year
+    description: Year of data
+    in: path
+    type: integer
+    required: true
+    pattern: "^[0-9]{4}$"
+
+# ALL DEFINITIONS HERE
 definitions:
   Root:
     type: object
@@ -50,4 +73,35 @@ definitions:
         format: date-time
         description: Creation time
         example: "2015-07-07T15:49:51.230+02:00"
+        readOnly: true
+  SummaryURI:
+    type: object
+    properties:
+      year:
+        type: integer
+        description: Year of the data payload
+        example: "2010"
+        readOnly: true
+      link:
+        type: string
+        description: The resource link to the containing data
+        example: "/summary/costs/2010"
+        readOnly: true
+  Costs:
+    type: object
+    properties:
+      tuition_and_fees:
+        type: integer
+        description: Average annual tuition and fees costs
+        example: "10000"
+        readOnly: true
+#      room_and_board:
+#        type: integer
+#        description: Average annual room and board costs
+#        example: "2000"
+#        readOnly: true
+      books_and_supplies:
+        type: integer
+        description: Average annual books and fees costs
+        example: "2000"
         readOnly: true
