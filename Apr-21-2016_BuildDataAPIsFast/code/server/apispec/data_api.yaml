@@ -22,6 +22,18 @@ paths:
             type: array
             items:
               $ref: '#/definitions/Root'
+#  /:
+#    get:
+#      operationId: api_server.root
+#      summary: Get root server response
+#      responses:
+#        200:
+#          description: Return server information
+#          schema:
+#            type: array
+#            items:
+#              $ref: '#/definitions/Root'
+
 definitions:
   Root:
     type: object

@@ -26,3 +26,8 @@ Find out how it can be done!
 ### Example Specs
 
 [Connexion Pet Store Example](https://github.com/hjacobs/connexion-example/blob/master/swagger.yaml)
+
+## Prerequisites for this demo
+
+Connexion
+XLRD (to read XLS files)
