@@ -1,10 +1,12 @@
 # The Server Demo
 
-This demo is inspired by the work in the [Connexion Example Service](https://github.com/hjacobs/connexion-example).  The goal of this demo is to show how to quickly prop up an API to wr
+This demo is inspired by the work in the [Connexion Example Service](https://github.com/hjacobs/connexion-example).  The goal of this demo is to show how to quickly prop up an API to make use of data that you've been holding on to -- and to impress upon you how easy it is to liberate your data, not matter what form it may be in.  This example, will create endpoints over a MS Excel file!  
+
+Sound interesting?  Read on!
 
 
 ## The Data Source
-The data for the first part of the demo comes from the [National Center for Eduation Statistics](http://nces.ed.gov).  In particular we're going to make and API over some of the data in the [Integrated Postsecondary Data System](http://nces.ed.gov/ipeds) (IPEDS) which keeps track of a number of interesting statistics on higher education statistics.
+The data for the first part of the demo comes from the [National Center for Education Statistics](http://nces.ed.gov).  In particular we're going to make and API over some of the data in the [Integrated Postsecondary Data System](http://nces.ed.gov/ipeds) (IPEDS) which keeps track of a number of interesting statistics on higher education data.
 
 ## The API Problem
 There is a wealth of information in the data that we'd like to expose, but the files are all in Excel.  What's more, we don't exactly have time (or energy just yet) to convert the files to CSV, import them into a database, etc.  For the AccessDB folks, this might be a simple problem to solve, but I'd rather just take the data and expose it as fast as possible.
@@ -22,8 +24,8 @@ We're going to use the survey data from IPEDS in this example.  In particular, t
 
 We going to work with two files :
 
-* 2010 dictionary: [http://nces.ed.gov/ipeds/datacenter/data/IC2010_AY_Dict.zip](http://nces.ed.gov/ipeds/datacenter/data/IC2010_AY_Dict.zip), which includes the data we need for 2007-2011
-* 2014 dictionary: [http://nces.ed.gov/ipeds/datacenter/data/IC2014_AY_Dict.zip](http://nces.ed.gov/ipeds/datacenter/data/IC2014_AY_Dict.zip), which includes the summary data for 2011-2014, and 
+* 2010 dictionary: [http://nces.ed.gov/ipeds/datacenter/data/IC2010_AY_Dict.zip](http://nces.ed.gov/ipeds/datacenter/data/IC2010_AY_Dict.zip), which includes the data we need for 2007-2011, and
+* 2014 dictionary: [http://nces.ed.gov/ipeds/datacenter/data/IC2014_AY_Dict.zip](http://nces.ed.gov/ipeds/datacenter/data/IC2014_AY_Dict.zip), which includes the summary data for 2011-2014. 
 
 ## Getting the data
 
@@ -49,3 +51,8 @@ For the sake of this example, we are going to have two endpoints listed in the t
 |------|-------------------|
 | `/summary/costs`  | Provides the links to the endpoints to obtain all the costs data in the API.  |
 | `/summary/costs/{year}` | Provides the costs return data for  the supplied year (e.g. tuition+fees, room and board, books and supplies) | 
+
+## Implementation
+The core implementation can be found in [server](./server/api_server.py) file.
+
+The API specification can be found in [apispec](./server/apispec/data_api.yaml).  For more information about YAML, go [here](), and of course, [here for the OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification/).
