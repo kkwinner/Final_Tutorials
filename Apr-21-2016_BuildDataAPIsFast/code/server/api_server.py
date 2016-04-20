@@ -29,6 +29,9 @@ def get_summary(year):
                 2009: (sheet.cell(80, 4).value, sheet.cell(102, 4).value),
                 2010: (sheet.cell(83, 4).value, sheet.cell(100, 4).value)
             }
+            #
+            # for demo : uncomment and finish
+            #
             # out_of_state_tuition = {
             #     '2007': sheet.cell(88, 4).value,
             #     '2008': sheet.cell(91, 4).value,
@@ -46,6 +49,9 @@ def get_summary(year):
                 2013: (sheet.cell(77, 4).value, sheet.cell(99, 4).value),
                 2014: (sheet.cell(80, 4).value, sheet.cell(100, 4).value)
             }
+            #
+            # for demo : uncomment and finish
+            #
             # out_of_state_tuition = {
             #     '2011': sheet.cell(85, 4).value,
             #     '2012': sheet.cell(88, 4).value,
@@ -56,9 +62,8 @@ def get_summary(year):
         else:
             return {"error": "Data for year {} not found.".format(year)}
     except IOError:
-        print sys.exc_info()
         # Internal Server Error - NOT GOOD, but do something about it!
-        return {}
+        return return {"error": "An internal server error occured.", "reason": sys.exc_info(), "input": "\"{}\"".format(year)}
 
 if __name__ == '__main__':
     app = connexion.App(__name__, specification_dir='apispec/')
