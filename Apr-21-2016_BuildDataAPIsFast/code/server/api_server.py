@@ -63,7 +63,7 @@ def get_summary(year):
             return {"error": "Data for year {} not found.".format(year)}
     except IOError:
         # Internal Server Error - NOT GOOD, but do something about it!
-        return return {"error": "An internal server error occured.", "reason": sys.exc_info(), "input": "\"{}\"".format(year)}
+        return {"error": "An internal server error occured.", "reason": sys.exc_info(), "input": "\"{}\"".format(year)}
 
 if __name__ == '__main__':
     app = connexion.App(__name__, specification_dir='apispec/')
