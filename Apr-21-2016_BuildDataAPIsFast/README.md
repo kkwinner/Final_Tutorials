@@ -20,7 +20,7 @@ Well it isn't ... in less than an hour we'll go through the steps of building a 
 | Resource |    Notes        |
 |------|-----------------|
 | [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification)     | Check out the full documentation of the spec. |
-| [Connexion](https://github.com/zalando/connexion) | Core repo for the Connexion framework build on top of [Flask](http://flask.pocoo.org/). |
+| [Connexion](https://github.com/zalando/connexion) | Core repo for the Connexion framework built on top of [Flask](http://flask.pocoo.org/). |
 | [Connexion Example Service](https://github.com/hjacobs/connexion-example)| Example that inspired this talk. |
 | [XLRD](https://github.com/python-excel/xlrd) | The MS Excel file reader in Python (a prerequisite for this demo). |
 
