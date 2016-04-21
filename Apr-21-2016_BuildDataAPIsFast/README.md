@@ -25,4 +25,4 @@ Well it isn't ... in less than an hour we'll go through the steps of building a 
 | [XLRD](https://github.com/python-excel/xlrd) | The MS Excel file reader in Python (a prerequisite for this demo). |
 
 ## Slides 
-The slides for this can be found [here](./slides) liberally borrowing from the most awesome [fullpage.js](http://alvarotrigo.com/fullPage/).
+The slides for this can be found [here](./slides) liberally borrowing from the most awesome [reveal.js](http://lab.hakim.se/reveal-js/).
