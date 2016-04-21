@@ -16,13 +16,13 @@ Well it isn't ... in less than an hour we'll go through the steps of building a 
 
 ## Resources
 
-
 | Resource |    Notes        |
 |------|-----------------|
 | [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification)     | Check out the full documentation of the spec. |
 | [Connexion](https://github.com/zalando/connexion) | Core repo for the Connexion framework built on top of [Flask](http://flask.pocoo.org/). |
 | [Connexion Example Service](https://github.com/hjacobs/connexion-example)| Example that inspired this talk. |
 | [XLRD](https://github.com/python-excel/xlrd) | The MS Excel file reader in Python (a prerequisite for this demo). |
+| [Zalando's Restful API Guidelinets](https://github.com/zalando/restful-api-guidelines) | A nice guide to explore for some best practices about REST-based APIs | 
 
 ## Slides 
 The slides for this can be found [here](./slides) liberally borrowing from the most awesome [reveal.js](http://lab.hakim.se/reveal-js/).
