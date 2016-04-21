@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Reveal.js 3 Slide Demo</title>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="reveal/css/reveal.css">
+	<link rel="stylesheet" href="reveal/css/theme/black.css" id="theme">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+
+	<!--[if lt IE 9]>
+	<script src="reveal/lib/js/html5shiv.js"></script>
+	<![endif]--></head>
+<!-- http://htmlcheats.com/reveal-js/reveal-js-tutorial-reveal-js-for-beginners/ -->
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-background="images/14391226325_f4829d4315_k.jpg">
+				<!-- image CCBY janneke staaks : https://www.flickr.com/photos/jannekestaaks/14391226325/in/photolist-nVGNcP-oYp6Gz-9jMMjh-pTGtd5-cbs9bj-pV9fLL-5A4Aas-mZGfF4-55VAZm-qbdkWE-pevGq2-cbs8SC-q8ZgEq-cbs96A-qbdmhQ-9AJncc-65RcDT-uiDy7-9RmxWY-bRR6a-Cnc9N7-pTQfMt-55RpEe-q8Zh6A-qbgxqP-5s5DkA-gTocSF-qbdkDL-gbFEen-q8ZhdE-rJExPG-cavATQ-a2saox-qf59G-usgzy-8kt895-cZGwz9-9AdKo4-8uvzaT-9jS7wv-aCnY66-9ZanXb-a2mPuH-a8fJsc-a8fJwH-bHrvT6-cbs9uw-PAERs-qb6knr-3FgBeG-->
+				<h1>(Your) Data <br/>as a Service</h1>
+				<p><b>The Easy Way to Build an API for Your Data</b></p>
+				<p>Keith E. Maull, PhD</p>
+				<p><h5>Presented 4-21-2016</h5></p>
+			</section>
+
+			<section>
+				<section id="fragments_1">
+						<h2>Say you have some data ...</h2>
+						<p class="fragment"><span>Maybe it's big data ...</span></p>
+						<p class="fragment"><span>or small.</span></p>
+				</section>
+			</section>
+
+			<section>
+				<section id="fragments_2">
+					<h2>and maybe the data <br/>is useful to you </h2>
+						<p class="fragment">... and maybe someone else</p>
+						<p class="fragment">... and maybe even some other people.</p>
+				</section>
+			</section>
+
+			<section data-markdown>
+			## But there are 3 things you've convinced yourself of:
+
+1. Building an API is way more work than you have time for.
+2. Writing **_useful_** documentation for an API is going to take even longer than building it.
+3. There's nothing _really wrong_ with CSV files ... even the 1GB ZIP-bomb kind.
+			</section>
+
+			<section>
+				<section data-background="images/Test-Pattern.jpg">
+					<p>so you go on your merry way and do nothing</p>
+					<p class="fragment">... or put that data on an FTP server <br/>and call it a day.</p>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2>This talk is going explore the 'spec first' paradigm for building your data API ...</h2>
+				</section>
+
+				<section>
+					<h2>Ingredient 0: The Data</h2>
+					<a href="http://nces.ed.gov/ipeds/datacenter/DataFiles.aspx" target="_blank"><img src="images/ipeds-screenshot.JPG"/></a>
+					<p>Any data will do, though!</p>
+				</section>
+
+				<section>
+					<h2>Ingredient 1: The Spec</h2>
+					<a href="https://github.com/kmaull-ucar/Final_Tutorials/blob/master/Apr-21-2016_BuildDataAPIsFast/code/server/apispec/data_api.yaml" target="_blank"><img src="images/apispec-screenshot.JPG" width="70%"/></a>
+					<p><a href="https://openapis.org/">OpenAPI is really, really nice!</a></p>
+				</section>
+
+				<section>
+					<h2>Ingredient 2: The Implementation</h2>
+					<a href="https://github.com/kmaull-ucar/Final_Tutorials/blob/master/Apr-21-2016_BuildDataAPIsFast/code/server/api_server.py" target="_blank"><img src="images/code-screenshot.JPG" width="70%"/></a>
+					<p><a href="https://github.com/zalando/connexion">Connexion</a> and <a href="https://github.com/python-excel/xlrd">XLRD</a> are your friends!</a></p>
+				</section>
+
+				<section>
+					<h2>Ingredient 3: Run and test ...</h2>
+					<img src="images/apidemo.JPG" width="70%"/>
+				</section>
+
+			</section>
+			<section data-markdown>
+				## What you just learned to do
+
+				* You can now make a spec first API,
+				* with only a few lines of code,
+				* that produce a running server, documentation and test-harness,
+				* that can allow you to integrate almost any data source ...
+				* (even a gnarly XLS file if you need to)!
+			</section>
+
+			<section data-background="images/7074872791_7569aa25e2_k.jpg">
+				<!-- image CCBY TiEx_Bilder
+				https://www.flickr.com/photos/tiex_bilder/7074872791/in/photolist-bMbzcn-fwLh3T-mqeDU-FcFG3y-5iXjpn-dsh6A7-7GgnWL-duBHv8-onVoQK-9bGcC6-29LYgB-fxDua2-suu94f-8Ju8zX-92gkw2-fxpJ2F-4wAnhL-8qucRb-4GyPH9-5yaCbm-nEQZfq-5nfAt9-a6Vp7t-8uzmZE-dYWiYd-2F7QwV-dYWk3o-7tAnHQ-fxDu86-dsh6sw-dYWkxE-anhgfY-4zNdmZ-dYQBQD-8uzmUj-5ZS8aG-6dXWD-9GzLJN-u2EMP-htoFf4-5ZMVuX-bvi4N1-htoQFP-4StkSQ-an1jQH-75LsAf-99WCiK-Mg622-agU5J2-2FduhD -->
+				<p>BE BRAVE: go hack a data API today!</p>
+				<br/><br/>
+				<h2>Got Questions?</h2>
+				<p>kmaull@ucar.edu</p>
+				<p><a href="http://github.com/kmaull-ucar"><img src="images/GitHub-Mark-Light-64px.png"/></a></p>
+			</section>
+
+
+
+
+		</div>
+	</div>
+
+	<script src="reveal/lib/js/head.min.js"></script>
+	<script src="reveal/js/reveal.js"></script>
+
+	<script>
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [
+				{ src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'reveal/plugin/zoom-js/zoom.js', async: true },
+				{ src: 'reveal/plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+</html>
