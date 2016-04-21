@@ -36,9 +36,9 @@ Examining these files a little more closely, we can see the follow table gives u
 | Average published in-state tuition and fees (2007-10)  | [ic2010_ay.xls](data/ic2010_ay.xls) StatisticsRV sheet; cells E87-E98  |
 | Average published in-state tuition and fees (2010-14)  | [ic2014_ay.xls](data/ic2010_ay.xls) Statistics sheet; cells E72-E81 |
 | Average books and supplies costs (2007-10)  | [ic2010_ay.xls](data/ic2010_ay.xls) StatisticsRV sheet; cells E101-E104  |
-| Average books and supplies costs (2011-14)  | [ic2014_ay.xls](data/ic2014_ay.xls) StatisticsRV sheet; cells E98-E101  |
+| Average books and supplies costs (2011-14)  | [ic2014_ay.xls](data/ic2014_ay.xls) Statistics sheet; cells E98-E101  |
 | Average room and board (2007-10)  | [ic2010_ay.xls](data/ic2010_ay.xls) StatisticsRV sheet; cells E105-E108 |
-| Average room and board (2011-14)  | [ic2014_ay.xls](data/ic2014_ay.xls) StatisticsRV sheet; cells E102-105 |
+| Average room and board (2011-14)  | [ic2014_ay.xls](data/ic2014_ay.xls) Statistics sheet; cells E102-105 |
 
 # The Server Code
 
