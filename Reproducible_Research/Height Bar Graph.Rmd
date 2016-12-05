@@ -1,0 +1,47 @@
+---
+title: "Height Bar Graph"
+author: "C. Tobin Magle"
+date: "Nov 30, 2016"
+output: pdf_document
+---
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+First, we're going to download the data file from the web: 
+
+```{r}
+download.file(url = "http://libguides.colostate.edu/ld.php?content_id=27156359",
+              destfile = "ex1.csv", 
+              method="libcurl")
+```
+
+Now we're going to load the data from the file into an R variable
+
+```{r}
+height<-read.csv("ex1.csv", row.names="Country")
+```
+
+Now let's plot the data:
+
+```{r}
+
+counts<-t(as.matrix(height)) #converts the variable height to a format that
+                              #can be plotted
+counts<-counts-145            #transforms the data so it looks like the excel plot
+barplot(counts,               #the height of the bar
+        beside = TRUE,        #put cols next to eachother
+        main="Height by country in males and females",  #plot title
+        xlab="Country",         #X axis label
+        ylab="Height (cm)",     #Y axis label
+        col=c("blue", "red"),   #bar colors
+        offset=145,             #shifts the axis to make it look like excel
+        ylim=c(145,190),        #y axis limits
+        las=1)                  #horizontal text
+
+legend(x=0, y=190, #coordinates of where you want the legend to go 
+       legend=c("Males", "Females"), #legend text label
+       col=c("blue", "red"),         #colors 
+       pch=15)                       #shape of legend
+```
