@@ -3,7 +3,7 @@
 #SBATCH --time=0:02:00                   # Max walltime
 #SBATCH --job-name=Matlab                # Job submission name
 #SBATCH --output=Matlab.out              # Output file name
-#SBATCH --reservation=scbasics		 # Reservation name - will work during tutorial only
+#SBATCH --reservation=tutorial1		 # Reservation name - will work during tutorial only
 
 
 # Written by:	Shelley Knuth
