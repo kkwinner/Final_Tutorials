@@ -26,3 +26,6 @@ Well it isn't ... in less than an hour we'll go through the steps of building a 
 
 ## Slides 
 The slides for this can be found [here](./slides) liberally borrowing from the most awesome [reveal.js](http://lab.hakim.se/reveal-js/).
+
+## Contact
+Want to reach out, make a comment or otherwise collaborate?  Connect with me kmaull@ucar.edu!
