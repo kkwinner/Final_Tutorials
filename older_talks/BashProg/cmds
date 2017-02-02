@@ -1,3 +1,0 @@
-export NOW=`date +%Y%m%d`
-touch "data2.${NOW}.dat"
-
