@@ -5,7 +5,7 @@
 #SBATCH --output=Matlab.out              # Output file name
 #SBATCH --qos=debug		         # Specify debug QOS
 #SBATCH --partition=shas	         # Specify Summit haswell nodes
-#SBATCH --reservation=new_user           # Reservation name
+###SBATCH --reservation=new_user           # Reservation name
 
 
 # Written by:	Shelley Knuth
@@ -15,6 +15,9 @@
 #		to demonstrate how to submit a serial Matlab job from a 
 #		batch script on the Janus computers	
 
+
+# Load Matlab module
+ml matlab
 
 # Run matlab without a GUI
 matlab -nojvm -nodisplay -nodesktop -r "clear; matlab_tic;"

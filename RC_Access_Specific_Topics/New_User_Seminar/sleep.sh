@@ -7,7 +7,6 @@
 ###SBATCH --mail-user=<user>@colorado.edu
 #SBATCH --reservation=new_user     # Reservation name
 
-
 whoami
 sleep 90
 hostname
