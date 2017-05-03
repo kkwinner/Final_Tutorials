@@ -1,12 +1,26 @@
 #!/bin/bash
-#SBATCH -N 1                       # Number of requested nodes
-#SBATCH --time=0:01:00             # Max walltime
-#SBATCH --job-name=sleep           # Job submission name
-#SBATCH --output=sleep.out         # Output file name
-#SBATCH --mail-type=end		   # Email at of script 
-###SBATCH --mail-user=<user>@colorado.edu
-#SBATCH --reservation=new_user     # Reservation name
+#SBATCH --nodes=1				# Number of requested nodes
+#SBATCH --time=0:01:00				# Max walltime
+#SBATCH --qos=normal				# Specify normal QOS
+#SBATCH --partition=shas			# Specify Summit GPU nodes
+#SBATCH --output=sleep_%j.out			# Rename standard output file
+#SBATCH --job-name=sleep			# Job submission name
+#SBATCH --mail-type=end				# Email you when the job ends 
+###SBATCH --mail-user=<user>@colorado.edu	# Email address to send to	
+#SBATCH --reservation=new_user			# Reservation name
+
+# Written by:   Shelley Knuth
+# Date:         15 July 2016
+# Updated:      3 May 2017
+# Purpose:      To demonstrate how to run a batch job on RC resources
+
+
+# purge all existing modules
+module purge
+
+# The directory where you want the job to run
+cd /projects/$USER/tutorials/parallelization_workshop/new
 
 whoami
-sleep 90
+sleep 30
 hostname

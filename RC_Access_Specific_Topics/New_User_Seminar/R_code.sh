@@ -1,14 +1,16 @@
 #!/bin/bash
-#SBATCH -N 1                        	 # Number of requested nodes
-#SBATCH --time=0:01:00             	 # Max walltime
-#SBATCH --job-name=R_code          	 # Job submission name
-#SBATCH --output=R_code.out        	 # Output file name
-#SBATCH --qos=debug		         # Specify debug QOS
-#SBATCH --partition=shas	         # Specify Summit haswell nodes
-###SBATCH --reservation=new_user           # Reservation name
+#SBATCH --nodes=1				# Number of requested nodes
+#SBATCH --time=0:01:00				# Max walltime
+#SBATCH --qos=debug				# Specify debug QOS
+#SBATCH --partition=shas			# Specify Summit haswell nodes
+#SBATCH --output=R_code_%j.out			# Output file name
+#SBATCH --reservation=new_user		# Reservation name
+
+# purge all existing modules
+module purge
 
 # Load the R module
-ml R/3.3.0
+module load R/3.3.0
 
 # Run R Script
 Rscript R_program.R
